@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# Check if rust and cargo are installed
+# 检测是否安装了Rust和Cargo
 if ! command -v rustc &> /dev/null || ! command -v cargo &> /dev/null; then
-    echo "Rust or Cargo not found. Installing Rust..."
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    echo "未找到Rust或Cargo。正在安装Rust..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
     source "$HOME/.cargo/env"
 else
-    echo "Rust and Cargo are already installed."
+    echo "Rust和Cargo已经安装。"
 fi
 
-# Install protobuf compiler
-echo "Installing protobuf compiler..."
+# 安装protobuf编译器
+echo "正在安装protobuf编译器..."
 sudo apt update
 sudo apt install -y protobuf-compiler
-sudo apt install libssl-dev
-sudo apt install pkg-config
+sudo apt install -y libssl-dev
+sudo apt install -y pkg-config
 
-# Install Nexus CLI
-echo "Installing Nexus CLI..."
+# 安装Nexus CLI
+echo "正在安装Nexus CLI..."
 curl https://cli.nexus.xyz/ | sh
