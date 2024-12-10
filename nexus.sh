@@ -3,7 +3,7 @@
 # 检测是否安装了Rust和Cargo
 if ! command -v rustc &> /dev/null || ! command -v cargo &> /dev/null; then
     echo "未找到Rust或Cargo。正在安装Rust..."
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -1
     source "$HOME/.cargo/env"
 else
     echo "Rust和Cargo已经安装。"
