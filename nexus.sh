@@ -17,7 +17,7 @@ sudo apt install -y libssl-dev
 sudo apt install -y pkg-config
 
 # 请求用户输入Prover ID并保存
-echo "请输入Prover ID："
+echo "DZAyFjIx4ZNaGwgHcIXLSgchLs92"
 read PROVER_ID
 mkdir -p ~/.nexus
 echo "$PROVER_ID" > ~/.nexus/prover-id
