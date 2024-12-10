@@ -16,6 +16,12 @@ sudo apt install -y protobuf-compiler
 sudo apt install -y libssl-dev
 sudo apt install -y pkg-config
 
+# 请求用户输入Prover ID并保存
+echo "请输入Prover ID："
+read PROVER_ID
+mkdir -p ~/.nexus
+echo "$PROVER_ID" > ~/.nexus/prover-id
+
 # 安装Nexus CLI
 echo "正在安装Nexus CLI..."
 curl https://cli.nexus.xyz/ | sh
